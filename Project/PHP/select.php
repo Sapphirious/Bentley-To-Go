@@ -1,5 +1,7 @@
 <?php
    require("../project.inc");
+   
+   session_start();   
 
    $Connect = DatabaseConnect();
    
@@ -12,12 +14,13 @@
    
    if($result && $result->num_rows)
    {
-      header("Location: ../HTML/home");
+      $_SESSION['login_user'] = $username;
+      header("Location: profile.php");
    }
    else
    {
       echo $Connect->error;
-      echo "Invalid login information";
+      echo "\nInvalid login information";
    }
  
    exit();
