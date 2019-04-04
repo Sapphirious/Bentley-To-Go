@@ -79,8 +79,8 @@ function DatabaseConnect()
     //      set the UserName and Password to your credentials
     //      set the Database to your database (you mysql UserName)
 	$Server = "penguin";
-	$UserName = "maa3755";
-	$Password = "Rizriz32!";
+	$UserName = "jtr3862";
+	$Password = "your_root_password";
 	$Database = "bentley";
 
     // connect to the database
@@ -172,4 +172,54 @@ function DisplayComment()
     // close the connection
     $Connection->close();
 }
+function InsertNewUser()
+{
+    // check to see if something was send via POST
+if ( isset( $_POST["first-name"] ))
+{
+    // post data has been sent
+    echo "<p>Thank you!</p>\n";
+
+    // write out the data sent
+    echo "<p>Following feedback has been submitted:</p>\n";
+
+
+    foreach( $_POST as $Key => $Value )
+    {
+        // echo out the result
+        echo "<p>".$Key.": ".$Value."</p>\n";
+    }
+$Connection = DatabaseConnect();
+
+
+
+$SQL = "insert into user_profile( first_name, last_name, email, password ) value (";
+$SQL .= "\"".$_POST['first-name']."\"";
+$SQL .= ",\"".$_POST['last-name']."\"";
+$SQL .= ",\"".$_POST['email']."\"";
+$SQL .= ",\"".$_POST['password']."\"";
+$SQL .= ");";
+$Results = $Connection->query( $SQL );
+if ( $Results )
+{
+    // success message
+    echo "<p>Thank you for joining</p>\n";
+}
+else
+{
+    // error message
+    echo "<p>Email already in use</p>\n";
+}     
+// close the connection
+$Connection->close(); 
+
+
+}
+else
+{
+    // no post data notify the user
+    echo "<p>Nothing to insert</p>\n";
+}
+}
+
 ?>
