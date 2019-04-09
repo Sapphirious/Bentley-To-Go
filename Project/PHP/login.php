@@ -28,6 +28,7 @@
                 <td><button type="submit">Login</button></td>			
             </tr>
         </table>
+	 <p>Don't have an account? Sign up <a href="../HTML/register.html">HERE</a>
     </form>
 </div>
 </body>
