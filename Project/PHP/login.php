@@ -18,7 +18,7 @@
  <form id="login-form" method="POST" action="select.php" >
         <table border="0.5" >
             <tr>
-                <td><p>User Name<input type="text" name="user_id" required="true"/></p></td>
+                <td><p>Email<input type="text" name="user_id" required="true"/></p></td>
             </tr>
             <tr>
                 <td><p>Password<input type="password" name="user_pass" required = "true"/></p></td>
