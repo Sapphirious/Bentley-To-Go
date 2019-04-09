@@ -180,15 +180,6 @@ if ( isset( $_POST["first-name"] ))
     // post data has been sent
     echo "<p>Thank you!</p>\n";
 
-    // write out the data sent
-    echo "<p>Following feedback has been submitted:</p>\n";
-
-
-    foreach( $_POST as $Key => $Value )
-    {
-        // echo out the result
-        echo "<p>".$Key.": ".$Value."</p>\n";
-    }
 $Connection = DatabaseConnect();
 
 
@@ -203,7 +194,7 @@ $Results = $Connection->query( $SQL );
 if ( $Results )
 {
     // success message
-    echo "<p>Thank you for joining</p>\n";
+    echo "<p>You have Succefully Created an Account</p>\n";
 }
 else
 {
