@@ -15,14 +15,15 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
 <link href="../../../project.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
-
     <img src="pics/Logo.png" class="left" style="width:250px;height:77px;"> 
     <div class="topnav"> 
-    <a href="../../../HTML/home.html">Home</a>
+    <a href="../../homepage.php">Home</a>
+    <a href="../../contactus.php">Feedback</a>
+    <a href="../../aboutus.php">FAQ</a>
+    <a href="../../profile.php">Profile</a>
+    <a href="../PHP/loggedIn/Cart">Order</a>
      <b id="logout"><a href="../../logout.php">Log Out</a></b>
       </div>
-
 <h1 align="center">Products </h1>
 
 <!-- View Cart Box Start -->
