@@ -20,7 +20,7 @@
 <div class="food">
 </head>
 <body>
-<b id="welcome">Welcome : <i><?php echo $login_user; ?></i></b>
+<b id="welcome">Welcome : <i><?php echo $_SESSION['login_user']; ?></i></b>
 </div>
 </body>
 
