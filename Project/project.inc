@@ -172,45 +172,4 @@ function DisplayComment()
     // close the connection
     $Connection->close();
 }
-function InsertNewUser()
-{
-    // check to see if something was send via POST
-if ( isset( $_POST["first-name"] ))
-{
-    // post data has been sent
-    echo "<p>Thank you!</p>\n";
-
-$Connection = DatabaseConnect();
-
-
-
-$SQL = "insert into user_profile( first_name, last_name, email, password ) value (";
-$SQL .= "\"".$_POST['first-name']."\"";
-$SQL .= ",\"".$_POST['last-name']."\"";
-$SQL .= ",\"".$_POST['email']."\"";
-$SQL .= ",\"".$_POST['password']."\"";
-$SQL .= ");";
-$Results = $Connection->query( $SQL );
-if ( $Results )
-{
-    // success message
-    echo "<p>You have Succefully Created an Account</p>\n";
-}
-else
-{
-    // error message
-    echo "<p>Email already in use</p>\n";
-}     
-// close the connection
-$Connection->close(); 
-
-
-}
-else
-{
-    // no post data notify the user
-    echo "<p>Nothing to insert</p>\n";
-}
-}
-
 ?>
