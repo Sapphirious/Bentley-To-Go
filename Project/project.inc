@@ -79,8 +79,8 @@ function DatabaseConnect()
     //      set the UserName and Password to your credentials
     //      set the Database to your database (you mysql UserName)
 	$Server = "penguin";
-	$UserName = "jtr3862";
-	$Password = "your_root_password";
+	$UserName = "maa3755";
+	$Password = "Rizriz32!";
 	$Database = "bentley";
 
     // connect to the database
@@ -178,7 +178,7 @@ function InsertNewUser()
 if ( isset( $_POST["first-name"] ))
 {
     // post data has been sent
-    echo "<p>Thank you!</p>\n";
+    echo "<p></p>\n";
 
 $Connection = DatabaseConnect();
 

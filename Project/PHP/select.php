@@ -1,23 +1,26 @@
 <?php
    require("../project.inc");
+   
+   session_start();   
 
    $Connect = DatabaseConnect();
    
-   $username = $_POST["user_id"];
+   $email = $_POST["user_id"];
    $password = $_POST["user_pass"];
 
-   $SQL = "select username, password from user_profile where username = \"".$username."\" and password = \"".$password."\";";
+   $SQL = "select email, password from user_profile where email = \"".$email."\" and password = \"".$password."\";";
 
    $result = $Connect->query($SQL);
    
    if($result && $result->num_rows)
    {
-      header("Location: ../HTML/home");
+      $_SESSION['login_user'] = $email;
+      header("Location: ../HTML/loggedIn/homepage.html");
    }
    else
    {
       echo $Connect->error;
-      echo "Invalid login information";
+      echo "\nInvalid login information";
    }
  
    exit();
