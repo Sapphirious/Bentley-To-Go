@@ -15,7 +15,7 @@
    if($result && $result->num_rows)
    {
       $_SESSION['login_user'] = $email;
-      header("Location: ../PHP/profile.php");
+      header("Location: ../HTML/loggedIn/homepage.html");
    }
    else
    {
