@@ -19,9 +19,6 @@
     color: white;
 }
 
-a:link {
-	color: black;
-}
 body {
     background-color: #fff;
     background-attachment: fixed;
@@ -90,5 +87,4 @@ text-align: left;
 font-family: "Times New Roman", Times, serif;
 color: #972337;
 }
-
 

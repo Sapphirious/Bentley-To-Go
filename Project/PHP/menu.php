@@ -5,6 +5,7 @@
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <img src="../Pictures/Logo.png" class="left" style="width:250px;height:77px;"> 
     <div class="topnav"> 
@@ -24,7 +25,7 @@
     <h1>Menu Items</h1>
 
     <!-- main section used for formatting -->
-    <section class="main">
+    <section class="main">&eacute;
         <!-- section that contains the data -->
         <section class="background left-column">
             <?php
