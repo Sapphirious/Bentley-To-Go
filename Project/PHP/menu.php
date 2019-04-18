@@ -25,7 +25,7 @@
     <h1>Menu Items</h1>
 
     <!-- main section used for formatting -->
-    <section class="main">&eacute;
+    <section class="main">
         <!-- section that contains the data -->
         <section class="background left-column">
             <?php
