@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once("config.php");
+    require "../../../project.inc";
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,10 +10,10 @@ include_once("config.php");
 <title>View shopping cart</title>
 <link href="style/style.css" rel="stylesheet" type="text/css"></head>
 <body>
-<h1 align="center">View Cart</h1>
+<h1 align="center">Order ID:</h1> 
 <div class="cart-view-table-back">
 <form method="post" action="cart_update.php">
-<table width="100%"  cellpadding="6" cellspacing="0"><thead><tr><th>Quantity</th><th>Name</th><th>Price</th><th>Total</th><th>Remove</th></tr></thead>
+<table width="100%"  cellpadding="6" cellspacing="0"><thead><tr><th>Quantity</th><th>Name</th><th>Price</th><th>Total</th></tr></thead>
   <tbody>
  	<?php
 	if(isset($_SESSION["cart_products"])) //check session var
@@ -28,16 +29,23 @@ include_once("config.php");
 			$product_code = $cart_itm["product_code"];
 			$product_color = $cart_itm["product_color"];
 			$subtotal = ($product_price * $product_qty); //calculate Price x Qty
-			
 		   	$bg_color = ($b++%2==1) ? 'odd' : 'even'; //class for zebra stripe 
 		    echo '<tr class="'.$bg_color.'">';
-			echo '<td><input type="text" size="2" maxlength="2" name="product_qty['.$product_code.']" value="'.$product_qty.'" /></td>';
+			echo '<td>'.$product_qty.'</td>';
 			echo '<td>'.$product_name.'</td>';
 			echo '<td>'.$currency.$product_price.'</td>';
 			echo '<td>'.$currency.$subtotal.'</td>';
-			echo '<td><input type="checkbox" name="remove_code[]" value="'.$product_code.'" /></td>';
-            echo '</tr>';
+            		echo '</tr>';
 			$total = ($total + $subtotal); //add subtotal to total var
+			
+			$Connection = DatabaseConnect();
+			$SQL = "insert into cart( item_id, email, quantity) values (";
+			$SQL .= "\"".$product_code."\"";
+			$SQL .= ",\"".$_SESSION['login_user']."\"";
+			$SQL .= ",\"".$product_qty."\"";
+			$SQL .= ");";
+			$Results = $Connection->query( $SQL );  
+			$Connection->close(); 
         }
 		
 		$grand_total = $total + $shipping_cost; //grand total including shipping cost
@@ -54,8 +62,9 @@ include_once("config.php");
 		$shipping_cost = ($shipping_cost)?'Quick Order Charge : '.$currency. sprintf("%01.2f", $shipping_cost).'<br />':'';
 	}
     ?>
-    <tr><td colspan="5"><span style="float:right;text-align: right;"><?php echo $shipping_cost. $list_tax; ?>Amount Payable : <?php echo sprintf("%01.2f", $grand_total);?></span></td></tr>
-    <tr><td colspan="5"><a href="index.php" class="button">Add More Items</a><a href="sendcart.php" class="button">Checkout</a><button type="submit">Update</button></td></tr>
+
+    <tr><td colspan="5"><span style="float:right;text-align: right;"><?php echo $shipping_cost. $list_tax; ?>Amount Payable : $<?php echo sprintf("%01.2f", $grand_total);?></span></td></tr>
+    <tr><td colspan="5"><a a href="../../../HTML/home.html" class="button">Return Home</a></td></tr>
   </tbody>
 </table>
 <input type="hidden" name="return_url" value="<?php 
@@ -66,3 +75,4 @@ echo $current_url; ?>" />
 
 </body>
 </html>
+
