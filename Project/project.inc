@@ -172,10 +172,9 @@ function DisplayComment()
     // close the connection
     $Connection->close();
 }
-
 function InsertNewUser()
 {
-  if($_POST['password']===$_POST['password1']){ // check to see if something was send via POST
+    // check to see if something was send via POST
 if ( isset( $_POST["first-name"] ))
 {
     // post data has been sent
@@ -211,9 +210,6 @@ else
 {
     // no post data notify the user
     echo "<p>Nothing to insert</p>\n";
-}
-}else{
-echo"<p>Passwords did not match</p>";
 }
 }
 
