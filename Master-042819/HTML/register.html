@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<link href="../project.css" type="text/css" rel="Stylesheet" id = "currentStyle"/>
+<body>
+    <img src="../Pictures/Logo.png" class="left" style="width:250px;height:77px;"> 
+    <div class="topnav"> 
+    <a href="home.html">Home</a>
+    <a href="../PHP/menu.php">Menu</a>
+    <a href="contactus.html">Feedback</a>
+    <a href="aboutus.html">FAQ</a>
+    <a href="map.html">Map</a>
+    <a href="../PHP/login.php">User Login</a>
+      </div>
+
+<div class="food">
+ <h1>Registration</h1>
+
+<form name="reg-form" action="../PHP/register.php" method="POST">
+<fieldset>
+    <legend>Submit Information:</legend>
+	<p>Please use your Lock Haven University email address</p>
+	<p>First Name: <input name="first-name" type="text" required="true" placeholder="First Name" autofocus/></p>
+	<p>Last Name: <input name="last-name" type="text" required="true" placeholder="Last Name" /></p>
+	<p>Email: <input name="email" size="30" type="email"  required="true" placeholder="LockHaven Email" pattern="[A-za-z0-9]*\b@lockhaven.edu" oninvalid="setCustomValidity('Please use your Lock Haven University email address')"onchange="try{setCustomValidity('')}catch(e){}"/></p>
+	<p>Password: <input name="password" type="password" required="true" placeholder="Password"pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"oninvalid="setCustomValidity('Your password must contain atleast 6 characters, one number, one lowercase letter and one uppercase letter')" onchange="try{setCustomValidity('')}catch(e){}"/></p>
+	<p>Confirm Password: <input name="password1" type="password" required="true" placeholder="Confirm Password"/></p>
+
+
+
+
+    <input type="submit" value="Submit"/>
+  </fieldset>
+</form>
+
+</div>
+</body>
+
+</html>
