@@ -53,6 +53,7 @@ else
 <!DOCTYPE html>
 <html>
 <head>
+<title>Feedback</title>
 
 </head>
 <body>

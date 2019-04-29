@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <link href="../project.css" type="text/css" rel="Stylesheet" id = "currentStyle"/>
-
+<title>Login</title>
 <body>
     <img src="../Pictures/Logo.png" class="left" style="width:250px;height:77px;">
     <div class="topnav"> 
@@ -31,8 +31,8 @@
             </tr>
         </table>
 </fieldset>
-	<p>Don't have an account? Sign up <a href="../HTML/register.html">HERE</a>
-    
+	<p>Don't have an account? Sign up <a href="../HTML/register.html">HERE</a></p>
+    <a href="../PHP/adminl">Admin Login</a>
     </form>
 </div>
 </body>

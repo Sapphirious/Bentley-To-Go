@@ -5,7 +5,14 @@
 	}
 ?><!DOCTYPE html>
 <html>
+<style>
+.userform {
+  column-count: 3;
+
+}
+</style>
 <link href="../project.css" type="text/css" rel="Stylesheet" id = "currentStyle"/>
+<title>Profile</title>
 
 <body>
     <img src="../Pictures/Logo.png" class="left" style="width:250px;height:77px;"> 
@@ -24,9 +31,11 @@
 <body>
 <b id="welcome">Welcome : <i><?php echo $_SESSION['login_user']; ?></i></b>
 </div>
+<div class="userform">
 <form name="reg-form" action="./updatepayment.php" method="POST">
+
 <fieldset>
-    <legend>Update Payment Information:</legend> 
+    <legend><h3>Update Payment Information:</h3></legend> 
 	<p>Card Holder First Name: <input name="first-name" type="text" required="true" placeholder="First Name" /></p>
 	<p>Card Holder Last Name:<input name="last-name" type="text" required="true" placeholder="Last Name" /></p>
 	<p>Card Number: <input name="cardnum" type="text" required="true" placeholder="Card Number"/></p>
@@ -87,12 +96,29 @@
 <OPTION>Wisconsin
 <OPTION>Wyoming</SELECT></p>
 	<p>Billing Zipcode: <input name="zipcode" type="text" required="true" placeholder="Zipcode"/></p>
-	
-
-
-
-    <input type="submit" value="Submit"/>
+    <input type="submit" value="Update Payment Method"/>
   </fieldset>
+  </form>
+  <form name="reg-form" action="./changepword.php" method="POST">
+  <fieldset>
+  
+    <legend><h3>Change Password:</h3></legend> 
+	<p>New Password:<input name="npassword" type="password" required="true" placeholder="New Password" /></p>
+	<p>New Password Confirmation: <input size="30px" name="npassword1" type="password" required="true" placeholder="New Password Confirmation"/></p>
+	<input type="submit"  name="update" value="Change Password"/>
+	
+	</fieldset>
+	</form>
+	<form name="reg-form" action="./remove.php" method="POST">
+	<fieldset>
+	<legend ><h3>Remove Account:</h3></legend>
+	<p>Email:<input name="email" type="text" required="true" placeholder="Email"/></p>
+	<p>Password For Verification:<input name="dpassword" type="password" required="true" placeholder="Password"/></p>
+	<input type="submit" name="delete" value="Delete Account"  />
+	</fieldset>
+  
 </form>
+</div>
+
 </body>
 </html>

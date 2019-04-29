@@ -89,13 +89,6 @@ $products_item .= <<<EOT
 	
 	<fieldset>
 	
-	<label>
-		<span>Cooked</span>
-		<select name="product_color">
-		<option value="Black">Well Done</option>
-		<option value="Silver">Regular</option>
-		</select>
-	</label>
 	
 	<label>
 		<span>Quantity</span>

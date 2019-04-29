@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <link href="../project.css" type="text/css" rel="Stylesheet" id = "currentStyle"/>
+<title>About Us</title>
 
 <body>
     <img src="../Pictures/Logo.png" class="left" style="width:250px;height:77px;"> 

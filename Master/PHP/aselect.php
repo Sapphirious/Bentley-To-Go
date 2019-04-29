@@ -8,14 +8,14 @@
    $email = $_POST["user_id"];
    $password = $_POST["user_pass"];
 
-   $SQL = "select email, password from user_profile where email = \"".$email."\" and password = \"".$password."\";";
+   $SQL = "select email, password from user_profile where email = \"".$email."\" and classification=\"".admin."\" and password = \"".$password."\";";
 	
    $result = $Connect->query($SQL);
    
    if($result && $result->num_rows)
    {
       $_SESSION['login_user'] = $email;
-      header("Location: ../PHP/profile.php");
+      header("Location: ../PHP/admininfo.php");
    }
    else
    {

@@ -64,7 +64,7 @@ include_once("config.php");
     ?>
 
     <tr><td colspan="5"><span style="float:right;text-align: right;"><?php echo $shipping_cost. $list_tax; ?>Amount Payable : $<?php echo sprintf("%01.2f", $grand_total);?></span></td></tr>
-    <tr><td colspan="5"><a a href="../../../HTML/loggedIn/homepage.html" class="button">Return Home</a></td></tr>
+    <tr><td colspan="5"><a a href="../../homepage.php" class="button">Return Home</a></td></tr>
   </tbody>
 </table>
 <input type="hidden" name="return_url" value="<?php 
