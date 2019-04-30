@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<h1>Registration</h1>
+<h1>Payment Info</h1>
 <?php
     PaymentInfo();
 ?>

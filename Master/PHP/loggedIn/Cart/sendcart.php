@@ -10,7 +10,6 @@ include_once("config.php");
 <title>View shopping cart</title>
 <link href="style/style.css" rel="stylesheet" type="text/css"></head>
 <body>
-<h1 align="center">Order ID:</h1> 
 <div class="cart-view-table-back">
 <form method="post" action="cart_update.php">
 <table width="100%"  cellpadding="6" cellspacing="0"><thead><tr><th>Quantity</th><th>Name</th><th>Price</th><th>Total</th></tr></thead>
